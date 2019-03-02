@@ -1,0 +1,48 @@
+<!doctype html>
+<html lang="en">
+<head data-th-replace="fragments/layout :: headFragment(title='Product Add')"></head>
+<body>
+<nav data-th-include="fragments/layout :: NavBar"></nav>
+
+<div class="container">
+    <div class="row">
+        <div class="col s12">
+            <h1>Add Reagent</h1>
+            <form data-th-action="@{/product-add}" method="post">
+                <div class="row">
+                    <div class="input-field col s12">
+                        <input placeholder="Product name" id="name" name="name" type="text" class="validate" required>
+                        <label for="name">Product name</label>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="input-field col s12">
+                        <textarea id="experimentId" name="experimentId" class="materialize-textarea" required data-th-text="${experimentId}"></textarea>
+                        <label for="experimentId">Experiment ID</label>
+                    </div>
+                    <div class="input-field col s12">
+                        <textarea id="formula" name="formula" class="materialize-textarea" required></textarea>
+                        <label for="formula">Formula of product</label>
+                    </div>
+                    <div class="input-field col s12">
+                        <textarea id="molecularWeight" name="molecularWeight" class="materialize-textarea" required></textarea>
+                        <label for="molecularWeight">Molecular weight of product</label>
+                    </div>
+                    <div class="input-field col s12">
+                        <textarea id="amountGram" name="amountGram" class="materialize-textarea" required></textarea>
+                        <label for="amountGram">Amount of reagent in grams</label>
+                    </div>
+                    <div class="input-field col s12">
+                        <textarea id="linkForDescription" name="linkForDescription" class="materialize-textarea" required></textarea>
+                        <label for="linkForDescription">Description of product</label>
+                    </div>
+                </div>
+                <button class="waves-effect waves-light btn" type="submit">Add</button>
+            </form>
+        </div>
+    </div>
+</div>
+
+<div data-th-include="fragments/layout :: scriptsFragment" data-th-remove="tag"></div>
+</body>
+</html>

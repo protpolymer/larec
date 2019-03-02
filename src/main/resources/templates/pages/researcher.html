@@ -1,0 +1,35 @@
+<!doctype html>
+<html lang="en">
+<head data-th-replace="fragments/layout :: headFragment(title='Researcher')"></head>
+<body>
+<nav data-th-include="fragments/layout :: NavBar"></nav>
+<div class="container">
+    <div class="row">
+        <div class="col s12">
+            <form data-th-action="@{/researcher/{id} (id=${researcher.id})}" method="post">
+                <div class="row">
+                    <div class="input-field col s12">
+                        <input placeholder="Researcher name" id="name" name="name" type="text" class="validate" required data-th-text="${researcher.name}">
+                        <label for="name">Researcher</label>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="input-field col s12">
+                        <textarea id="experimentId" name="experimentId" class="materialize-textarea" required data-th-text="${researcher.experiment.id}" readonly></textarea>
+                        <label for="experimentId">Experiment ID</label>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="input-field col s12">
+                        <textarea id="age" name="age" class="materialize-textarea" required data-th-text="${researcher.age}"></textarea>
+                        <label for="age">Age</label>
+                    </div>
+                </div>
+                <button class="waves-effect waves-light btn" type="submit">Save</button>
+            </form>
+        </div>
+    </div>
+</div>
+<div data-th-include="fragments/layout :: scriptsFragment" data-th-remove="tag"></div>
+</body>
+</html>

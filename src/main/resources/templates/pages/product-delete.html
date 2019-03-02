@@ -1,0 +1,17 @@
+<!doctype html>
+<html lang="en">
+<head data-th-replace="fragments/layout :: headFragment(title='Product')"></head>
+<body>
+<nav data-th-include="fragments/layout :: NavBar"></nav>
+<div class="container">
+    <div class="row">
+        <div class="col s12">
+            <form data-th-action="@{/product/{id}/delete (id=${product.id})}" method="post">
+                <button class="waves-effect waves-light btn" type="submit">delete</button>
+            </form>
+        </div>
+    </div>
+</div>
+<div data-th-include="fragments/layout :: scriptsFragment" data-th-remove="tag"></div>
+</body>
+</html>

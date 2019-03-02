@@ -1,0 +1,52 @@
+<!doctype html>
+<html lang="en">
+<head data-th-replace="fragments/layout :: headFragment(title='Experiment Add')"></head>
+<body>
+<nav data-th-include="fragments/layout :: NavBar"></nav>
+<div class="container">
+    <div class="row">
+        <div class="col s12">
+            <h1>Add Experiment</h1>
+            <form data-th-action="@{/add}" method="post">
+                <div class="row">
+                    <div class="input-field col s12">
+                        <input placeholder="Experiment name" id="name" name="name" type="text" class="validate" required>
+                        <label for="name">Experiment name</label>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="input-field col s12">
+                        <textarea id="date" name="date" class="datepicker" required></textarea>
+                        <label for="date">Experiment date</label>
+                    </div>
+                    <div class="input-field col s12">
+                        <textarea id="reaction" name="reaction" class="materialize-textarea" required></textarea>
+                        <label for="reaction">Experiment reaction</label>
+                    </div>
+                    <div class="input-field col s12">
+                        <textarea id="processConditions" name="processConditions" class="materialize-textarea" required></textarea>
+                        <label for="processConditions">Process Conditions</label>
+                    </div>
+                    <div class="input-field col s12">
+                        <textarea id="description" name="description" class="materialize-textarea" required></textarea>
+                        <label for="description">Description</label>
+                    </div>
+                    <div class="input-field col s12">
+                        <textarea id="conclusion" name="conclusion" class="materialize-textarea" required></textarea>
+                        <label for="conclusion">Conclusion</label>
+                    </div>
+                    <div class="input-field col s12">
+                        <textarea id="linkOfDocumentationExperiment" name="linkOfDocumentationExperiment" class="materialize-textarea" required></textarea>
+                        <label for="linkOfDocumentationExperiment">Documentation</label>
+                    </div>
+                </div>
+
+                <button class="waves-effect waves-light btn" type="submit">Add</button>
+            </form>
+
+        </div>
+    </div>
+</div>
+
+<div data-th-include="fragments/layout :: scriptsFragment" data-th-remove="tag"></div>
+</body>

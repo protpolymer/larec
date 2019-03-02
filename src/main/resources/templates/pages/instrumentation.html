@@ -1,0 +1,32 @@
+<!doctype html>
+<html lang="en">
+<head data-th-replace="fragments/layout :: headFragment(title='Instrumentation')"></head>
+<body>
+<nav data-th-include="fragments/layout :: NavBar"></nav>
+
+<div class="container">
+    <div class="row">
+        <div class="col s12">
+            <h1>Instrumentation</h1>
+            <form data-th-action="@{/instrumentation/{id} (id=${instrumentation.id})}" method="post">
+                <div class="row">
+                    <div class="input-field col s12">
+                        <input placeholder="Instrumentation name" id="name" name="name" type="text" class="validate" required data-th-text="${instrumentation.name}">
+                        <label for="name">Instrumentation</label>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="input-field col s12">
+                        <textarea id="experimentId" name="experimentId" class="materialize-textarea" required data-th-text="${instrumentation.experiment.id}" readonly></textarea>
+                        <label for="experimentId">Experiment ID</label>
+                    </div>
+                </div>
+                <button class="waves-effect waves-light btn" type="submit">Save</button>
+            </form>
+        </div>
+    </div>
+</div>
+
+<div data-th-include="fragments/layout :: scriptsFragment" data-th-remove="tag"></div>
+</body>
+</html>

@@ -1,0 +1,13 @@
+<!doctype html>
+<html lang="en">
+<head data-th-replace="fragments/layout :: headFragment(title='Error')"></head>
+<body>
+<nav data-th-include="fragments/layout :: NavBar"></nav>
+
+<h1>Something bad happened!</h1>
+<p data-th-if="${message}">
+    [[${message}]]
+
+<div data-th-include="fragments/layout :: scriptsFragment" data-th-remove="tag"></div>
+</body>
+</html>

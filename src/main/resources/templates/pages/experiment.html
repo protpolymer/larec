@@ -1,0 +1,129 @@
+<!doctype html>
+<html lang="en">
+<head data-th-replace="fragments/layout :: headFragment(title='All Experiments')"></head>
+<body>
+<nav data-th-include="fragments/layout :: NavBar"></nav>
+    <div class="row">
+        <div class="col s3">
+            <ul class="collection">
+                <h3>Researchers</h3>
+                <li class="collection-item" data-th-each="researcher : ${experiment.researchers}">
+                    <div>
+                        <p>
+                            <a class="collection-item" data-th-href="@{/researcher/{id} (id=${researcher.id}) }">
+                                <span data-th-text="${researcher.name}"></span>
+                                <span>; </span>
+                                <span data-th-text="${researcher.age}"></span>
+                                <span> years</span>
+                            </a>
+                            <a data-th-href="@{/researcher/{id}/delete (id=${researcher.id})}">Delete</a>
+                        </p>
+                    </div>
+                </li>
+            </ul>
+            <div>
+                <a data-th-href="@{/researcher-add}">Add Researcher</a>
+            </div>
+        </div>
+        <div class="col s9">
+            <div class="card">
+                <div class="card-content">
+                    <span>Title: </span>
+                    <span class="card-title" data-th-text="${experiment.name}"></span>
+                    <div>
+                        <p>
+                            <span>Experiment ID: </span>
+                            <span data-th-text="${experiment.id}"></span>
+                        </p>
+                        <p>
+                            <span>Date: </span>
+                            <span data-th-text="${experiment.date}"></span>
+                        </p>
+                        <p>
+                            <span>Reaction: </span>
+                            <span data-th-text="${experiment.reaction}"></span>
+                        </p>
+                        <div>
+                            <ul class="collection">
+                                <li class="collection-item" data-th-each="reagent : ${experiment.reagents}">
+                                    <p>
+                                        <a class="collection-item" data-th-href="@{/reagent/{id} (id=${reagent.id}) }">
+                                            <span data-th-text="${reagent.name}"></span>
+                                            <span>; </span>
+                                            <span data-th-text="${reagent.formula}"></span>
+                                            <span>; </span>
+                                            <span data-th-text="${reagent.molecularWeight}"></span>
+                                            <span> mol; </span>
+                                            <span data-th-text="${reagent.amountGram}"></span>
+                                            <span> g; </span>
+                                            <a data-th-href="${reagent.linkForDescription}"></a>
+                                        </a>
+                                        <a data-th-href="@{/reagent/{id}/delete (id=${reagent.id})}">Delete Reagent</a>
+                                    </p>
+                                </li>
+                            </ul>
+                            <div>
+                                 <a data-th-href="@{/reagent-add}">Add Reagent</a>
+                            </div>
+                            <div>
+                                <ul class="collection">
+                                    <li class="collection-item" data-th-each="instrumentation : ${experiment.instrumentations}">
+                                        <p>
+                                            <a class="collection-item"  data-th-href="@{/instrumentation/{id} (id=${instrumentation.id})}">
+                                                <span data-th-text="${instrumentation.name}"></span>
+                                            </a>
+                                        </p>
+                                        <a data-th-href="@{/instrumentation/{id}/delete (id=${instrumentation.id})}">Delete Instrumentation</a>
+                                    </li>
+                                </ul>
+                                <div>
+                                    <a data-th-href="@{/instrumentation-add}">Add Instrumentation</a>
+                                </div>
+                            </div>
+                        </div>
+                        <p>
+                            <span>Process Conditions: </span>
+                            <span data-th-text="${experiment.processConditions}"></span>
+                        </p>
+                        <p>
+                            <span>Description: </span>
+                            <span data-th-text="${experiment.description}"></span>
+                        </p>
+                        <ul class="collection">
+                            <li class="collection-item" data-th-each="product : ${experiment.products}">
+                                <p>
+                                    <a data-th-href="@{/product/{id} (id=${product.id})}">
+                                        <span data-th-text="${product.name}"></span>
+                                        <span>; </span>
+                                        <span data-th-text="${product.formula}"></span>
+                                        <span>; </span>
+                                        <span data-th-text="${product.molecularWeight}"></span>
+                                        <span> mol; </span>
+                                        <span data-th-text="${product.amountGram}"></span>
+                                        <span> g; </span>
+                                        <a data-th-href="${product.linkForDescription}"></a>
+                                    </a>
+                                </p>
+                                <a data-th-href="@{/product/{id}/delete (id=${product.id})}">Delete Product</a>
+                            </li>
+                        </ul>
+                        <div>
+                            <a data-th-href="@{/product-add}">Add Product</a>
+                        </div>
+                        <p>
+                            <span>Conclusion: </span>
+                            <span data-th-text="${experiment.conclusion}"></span>
+                        </p>
+                        <p>
+                            <span>Link for documentation: </span>
+                            <a data-th-text="${experiment.linkOfDocumentationExperiment}"></a>
+                        </p>
+                    </div>
+                 </div>
+            </div>
+        </div>
+        <a data-th-href="@{/{id}/edit (id=${experiment.id})}" class="waves-effect waves-light btn">Edit</a>
+    </div>
+<div data-th-include="fragments/layout :: scriptsFragment" data-th-remove="tag"></div>
+</body>
+</html>
