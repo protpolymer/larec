@@ -14,7 +14,7 @@ public class ReagentDto {
 
     private int experimentId;
     private String name;
-    private int molecularWeight;
+    private BigDecimal molecularWeight;
     private String formula;
     private String linkForDescription;
     private BigDecimal amountGram;
