@@ -1,2 +1,2 @@
 # LaRec
-[![Build Status](https://travis-ci.org/protpolymer/larec.svg?branch=master)](https://travis-ci.org/protpolymer/larec)
+[![Build Status](https://travis-ci.org/protpolymer/larec.svg?branch=master)](https://travis-ci.org/protpolymer/larec) [![codecov](https://codecov.io/gh/protpolymer/larec/branch/master/graph/badge.svg)](https://codecov.io/gh/protpolymer/larec)
