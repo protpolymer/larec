@@ -12,7 +12,7 @@ public class ResearcherService {
     private final ResearcherRepository researcherRepository;
     private final ExperimentService experimentService;
 
-    public ResearcherService(ResearcherRepository researcherRepository, ExperimentService service, ExperimentService experimentService) {
+    public ResearcherService(ResearcherRepository researcherRepository, ExperimentService experimentService) {
         this.researcherRepository = researcherRepository;
         this.experimentService = experimentService;
     }

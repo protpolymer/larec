@@ -33,7 +33,7 @@ public class ExperimentService {
         ExperimentEntity experiment = experimentRepository.findById(id).orElseThrow(ExperimentNotFoundException::new);
         List<ReagentEntity> reagentResult = new ArrayList<>();
         for (ReagentEntity reagent : reagentRepository.findAll()) {
-            if (equals(reagent.getExperiment()) == equals(experiment)) {
+            if (reagent.getExperiment() == experiment) {
                 reagentResult.add(reagent);
             }
         }
@@ -41,7 +41,7 @@ public class ExperimentService {
 
         List<InstrumentationEntity> instrumentationResult = new ArrayList<>();
         for (InstrumentationEntity instrumentation : instrumentationRepository.findAll()) {
-            if (equals(instrumentation.getExperiment()) == equals(experiment)) {
+            if (instrumentation.getExperiment() == experiment) {
                 instrumentationResult.add(instrumentation);
             }
         }
@@ -49,7 +49,7 @@ public class ExperimentService {
 
         List<ResearcherEntity> researcherResult = new ArrayList<>();
         for (ResearcherEntity researcher : researcherRepository.findAll()) {
-            if (equals(researcher.getExperiment()) == equals(experiment)) {
+            if (researcher.getExperiment() == experiment) {
                 researcherResult.add(researcher);
             }
         }
@@ -57,7 +57,7 @@ public class ExperimentService {
 
         List<ProductEntity> productResult = new ArrayList<>();
         for (ProductEntity product : productRepository.findAll()) {
-            if (equals(product.getExperiment()) == equals(experiment)) {
+            if (product.getExperiment() == experiment) {
                 productResult.add(product);
             }
         }
