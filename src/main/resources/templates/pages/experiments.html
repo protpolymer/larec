@@ -8,7 +8,7 @@
         <h1>All Experiments</h1>
         <ul class="collection">
             <li class="collection-item" data-th-each="experiment : ${experiments}">
-                <a class="collection-item" data-th-href="@{/{id} (id=${experiment.id}) }">
+                <a class="item" data-th-href="@{/{id} (id=${experiment.id}) }">
                     <span data-th-text="${experiment.name}"></span>
                     <span>;</span>
                     <span data-th-text="${experiment.date}"></span>
@@ -16,9 +16,9 @@
                 <a data-th-href="@{/{id}/delete (id=${experiment.id})}">Delete</a>
             </li>
         </ul>
+        <p data-th-if="${experiments.size() == 0}" class="no-experiments">No products to display</p>
         <a data-th-href="@{/add}" class="waves-effect waves-light btn">Add Experiment</a>
     </div>
 </div>
-
 <div data-th-include="fragments/layout :: scriptsFragment" data-th-remove="tag"></div>
 </body>
