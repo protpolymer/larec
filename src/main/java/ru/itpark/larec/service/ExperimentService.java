@@ -81,6 +81,28 @@ public class ExperimentService {
     }
 
     public void deleteById(int id) {
+        ExperimentEntity experiment = experimentRepository.findById(id).orElseThrow(ExperimentNotFoundException::new);
+        for (ReagentEntity reagent : reagentRepository.findAll()) {
+            if (reagent.getExperiment() == experiment) {
+                reagentRepository.delete(reagent);
+            }
+        }
+        for (InstrumentationEntity instrumentation : instrumentationRepository.findAll()) {
+            if (instrumentation.getExperiment() == experiment) {
+                instrumentationRepository.delete(instrumentation);
+            }
+        }
+        for (ResearcherEntity researcher : researcherRepository.findAll()) {
+            if (researcher.getExperiment() == experiment) {
+                researcherRepository.delete(researcher);
+            }
+        }
+        for (ProductEntity product : productRepository.findAll()) {
+            if (product.getExperiment() == experiment) {
+                productRepository.delete(product);
+            }
+        }
+
         experimentRepository.deleteById(id);
     }
 

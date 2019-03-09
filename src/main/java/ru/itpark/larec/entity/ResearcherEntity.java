@@ -16,7 +16,7 @@ public class ResearcherEntity {
     @GeneratedValue
     private int id;
 
-    @ManyToOne(fetch = FetchType.EAGER)
+    @ManyToOne(fetch = FetchType.LAZY)
     private ExperimentEntity experiment;
 
     private String name;
