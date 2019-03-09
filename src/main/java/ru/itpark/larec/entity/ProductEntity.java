@@ -5,7 +5,6 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 
 import javax.persistence.*;
-import java.math.BigDecimal;
 
 @Entity
 @Data
@@ -21,8 +20,8 @@ public class ProductEntity {
     private ExperimentEntity experiment;
 
     private String name;
-    private BigDecimal molecularWeight;
+    private double molecularWeight;
     private String formula;
     private String linkForDescription;
-    private BigDecimal amountGram;
+    private double amountGram;
 }

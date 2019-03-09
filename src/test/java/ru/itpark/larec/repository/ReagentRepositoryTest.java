@@ -45,10 +45,10 @@ class ReagentRepositoryTest {
                                 null
                         )),
                 null,
+                0.0,
                 null,
                 null,
-                null,
-                null
+                0.0
         );
         em.merge(reagentEntity);
     }
@@ -73,10 +73,10 @@ class ReagentRepositoryTest {
                                 null
                         )),
                 null,
+                0.0,
                 null,
                 null,
-                null,
-                null
+                0.0
         );
         repository.save(reagentTwoEntity);
         assertEquals(2, repository.findAll().size());

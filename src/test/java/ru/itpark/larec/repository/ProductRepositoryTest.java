@@ -42,10 +42,10 @@ class ProductRepositoryTest {
                         null,
                         null)),
                 null,
+                0.0,
                 null,
                 null,
-                null,
-                null);
+                0.0);
         em.merge(productEntity);
     }
 
@@ -67,10 +67,10 @@ class ProductRepositoryTest {
                         null,
                         null)),
                 null,
+                0.0,
                 null,
                 null,
-                null,
-                null);
+                0.0);
 
         repository.save(productTwoEntity);
         assertEquals(2, repository.findAll().size());
